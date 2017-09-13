@@ -30,7 +30,7 @@ public class ConstantPool {
 
     private static ConstantInfo readConstantInfo(byte[] c) {
         byte tag = readU1(c);
-        ConstantInfo info = newConstantInfo(tag);
+        ConstantInfo info = newConstantInfo(tag,c);
         return info;
     }
 }

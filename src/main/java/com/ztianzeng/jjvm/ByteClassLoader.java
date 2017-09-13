@@ -1,9 +1,8 @@
 package com.ztianzeng.jjvm;
 
-import org.junit.Test;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 
 /**
  * @author : 赵天增
@@ -11,6 +10,8 @@ import java.io.*;
  * 描述 ：将字节码解析出来加载到class中
  */
 public class ByteClassLoader {
+
+
     public static byte readU1(byte[] c) {
         return Byte.parseByte(readByte(c, 1), 16);
     }
@@ -22,6 +23,10 @@ public class ByteClassLoader {
      */
     public static short readU2(byte[] c) {
         return Short.parseShort(readByte(c, 2), 16);
+    }
+
+    public static byte readU4(byte[] c) {
+        return Byte.parseByte(readByte(c, 4), 16);
     }
     /**
      * 用于读取类未见最前面的四个字节
