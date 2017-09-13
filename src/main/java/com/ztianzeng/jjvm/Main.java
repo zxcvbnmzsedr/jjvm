@@ -25,7 +25,6 @@ public class Main {
         aClass.setMagic(readMagic(c));
         aClass.setMinorVersion(readU2(c));
         aClass.setMajorVersion(readU2(c));
-//        aClass.setConstantPoolCount(readU2(c));
         aClass.setConstantPool(readConstantPool(c));
         return aClass;
     }

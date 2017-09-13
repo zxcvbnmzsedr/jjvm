@@ -51,8 +51,23 @@ public class ConstantInfo {
                 return new ConstantStringInfo(readU2(c));
             case CONSTANT_NameAndType:
                 return new ConstantNameAndType(readU2(c), readU2(c));
+            case CONSTANT_Utf8:
+                return new ConstantUtf8Info(readU2(c), c);
             default:
                 return null;
+        }
+    }
+
+    static class ConstantUtf8Info extends ConstantInfo {
+        short length;
+        byte[] bytes;
+
+        ConstantUtf8Info(short length, byte[] c) {
+            this.length = length;
+            this.bytes = new byte[length];
+            for (int i = 0; i < length; i++) {
+                this.bytes[i] = readU1(c);
+            }
         }
     }
 
