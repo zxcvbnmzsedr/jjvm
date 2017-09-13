@@ -30,7 +30,7 @@ public class ByteClassLoader {
      * 读取四个字节
      */
     public static String readMagic(byte[] c,int n) {
-        StringBuilder h = new StringBuilder();
+        StringBuilder h = new StringBuilder( );
         for (int i = 0; i < n; i++) {
             String temp = Integer.toHexString(c[i] & 0xFF);
             if (temp.length() == 1) {
