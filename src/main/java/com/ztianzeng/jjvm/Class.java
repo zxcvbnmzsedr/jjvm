@@ -26,13 +26,9 @@ public class Class {
      */
     private short majorVersion;
     /**
-     * 常量池数量
-     */
-    private String constantPoolCount;
-    /**
      * 常量池实例
      */
-    private List<ConstantPool> constantPool;
+    private ConstantInfo[] constantPool;
     /**
      * 访问权限
      */
