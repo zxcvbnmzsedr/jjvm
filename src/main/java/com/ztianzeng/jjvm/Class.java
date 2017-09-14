@@ -2,7 +2,6 @@ package com.ztianzeng.jjvm;
 
 import lombok.Data;
 
-import java.util.List;
 
 /**
  * @author : 赵天增
@@ -70,8 +69,6 @@ public class Class {
     private byte attributesCount;
 
     // TODO: 2017/9/13 这边缺个属性实例
-
-
 
 
 }

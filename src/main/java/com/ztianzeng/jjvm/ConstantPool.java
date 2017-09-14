@@ -1,7 +1,5 @@
 package com.ztianzeng.jjvm;
 
-import java.util.List;
-
 import static com.ztianzeng.jjvm.ByteClassLoader.readU1;
 import static com.ztianzeng.jjvm.ByteClassLoader.readU2;
 import static com.ztianzeng.jjvm.ConstantInfo.newConstantInfo;

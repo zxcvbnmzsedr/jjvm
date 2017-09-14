@@ -18,22 +18,27 @@ public class ByteClassLoader {
 
     /**
      * 读取两个字节的无符号数
+     *
      * @param c 类的字节码
      * @return
      */
     public static short readU2(byte[] c) {
         return Short.parseShort(readByte(c, 2), 16);
     }
+
     /**
      * 读取四个字节
+     *
      * @param c
      * @return
      */
     public static int readU4(byte[] c) {
         return Integer.parseInt(readByte(c, 4), 16);
     }
+
     /**
      * 用于读取类最前面的四个字节
+     *
      * @param c
      * @return
      */
