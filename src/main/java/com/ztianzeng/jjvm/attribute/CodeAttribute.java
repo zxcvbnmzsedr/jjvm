@@ -53,6 +53,9 @@ public class CodeAttribute extends AttributeInfo {
         code = new Code(this.codeLength).getInstructions(c);
         this.exceptionTableLength = readU2(c);
         this.attributesCount = readU2(c);
-
+        attributes = new AttributeInfo[this.attributesCount];
+        for (short i = 0; i < attributesCount; i++) {
+            
+        }
     }
 }

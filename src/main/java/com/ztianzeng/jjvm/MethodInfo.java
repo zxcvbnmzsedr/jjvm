@@ -35,7 +35,7 @@ public class MethodInfo {
      */
     AttributeInfo attributes[];
 
-    public MethodInfo(short accessFlags, short nameIndex, short descriptorIndex, short attributesCount) {
+    MethodInfo(short accessFlags, short nameIndex, short descriptorIndex, short attributesCount) {
         this.accessFlags = accessFlags;
         this.nameIndex = nameIndex;
         this.descriptorIndex = descriptorIndex;

@@ -10,6 +10,9 @@ import static com.ztianzeng.jjvm.ByteClassLoader.readInstruction;
  * 描述 ：Code 标识实现当前方法的Java虚拟机字节码,记录emmmm进栈出栈操作
  */
 public class Code {
+    private final static short aload_0 = 0x2a;
+    private final static short _return = 0xb1;
+    private final static short invokespecial = 0xb7;
     private Code[] code;
 
     public Code(int codeLength) {
@@ -23,11 +26,18 @@ public class Code {
         for (int i = 0; i < this.code.length; i++) {
             short index = readInstruction(c);
             switch (index) {
-                case 0x19:
-                    break;
-                case 0x2a:
+                case aload_0:
                     code[i] = new Aload(0);
                     break;
+
+                case _return:
+
+                    break;
+
+                case invokespecial:
+
+                    break;
+
             }
         }
         return code;
