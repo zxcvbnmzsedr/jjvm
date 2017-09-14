@@ -1,8 +1,10 @@
 package com.ztianzeng.jjvm;
 
 import com.ztianzeng.jjvm.attribute.AttributeInfo;
+import com.ztianzeng.jjvm.attribute.CodeAttribute;
 
 import static com.ztianzeng.jjvm.ByteClassLoader.readU2;
+import static com.ztianzeng.jjvm.ByteClassLoader.readU4;
 
 /**
  * @author : 赵天增
@@ -43,12 +45,14 @@ public class MethodInfo {
 
 
     public static MethodInfo[] newMethodInfo(byte[] c, int length) {
+        MethodInfo[] m = new MethodInfo[length];
         for (int i = 0; i < length; i++) {
-            MethodInfo methodInfo = new MethodInfo(readU2(c), readU2(c), readU2(c), readU2(c));
-            for (int j = 0; j < methodInfo.attributes.length; j++) {
-
-//                methodInfo.attributes[j] =
+            m[i] = new MethodInfo(readU2(c), readU2(c), readU2(c), readU2(c));
+            for (int j = 0; j < m[i].attributes.length; j++) {
+                m[i].attributes[j] = new CodeAttribute(readU2(c), readU4(c), c);
             }
         }
+        return m;
+
     }
 }

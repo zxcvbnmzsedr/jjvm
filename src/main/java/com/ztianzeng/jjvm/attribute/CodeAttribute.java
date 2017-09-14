@@ -2,17 +2,19 @@ package com.ztianzeng.jjvm.attribute;
 
 import com.ztianzeng.jjvm.Code;
 
+import static com.ztianzeng.jjvm.ByteClassLoader.readU2;
+import static com.ztianzeng.jjvm.ByteClassLoader.readU4;
+
 /**
  * @author : 赵天增
  * @create : 2017-09-14 14:50
  * 描述 ：Code属性
  */
-public class CodeAttribute {
+public class CodeAttribute extends AttributeInfo {
     /**
      * 操作栈允许的最大深度
      */
     short maxStack;
-
     /**
      * 当前方法引用的局部变量的个数包括
      * 调用此方法时用于传递参数的局部变量
@@ -42,6 +44,15 @@ public class CodeAttribute {
     AttributeInfo attributes[];
 
 
+    public CodeAttribute(short attributeNameIndex, int attributeLength, byte[] c) {
+        super(attributeNameIndex, attributeLength);
+        this.maxStack = readU2(c);
+        this.maxLocals = readU2(c);
+        this.codeLength = readU4(c);
+        this.code = new Code[codeLength];
+        code = new Code(this.codeLength).getInstructions(c);
+        this.exceptionTableLength = readU2(c);
+        this.attributesCount = readU2(c);
 
-
+    }
 }

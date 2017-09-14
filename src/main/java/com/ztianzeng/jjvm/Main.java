@@ -43,7 +43,7 @@ public class Main {
         // TODO: 2017/9/14 暂时没有字段
 
         aClass.setMethodsCount(readU2(c));
-        aClass.setMethod(newMethodInfo(c),aClass.getMethodsCount());
+        aClass.setMethod(newMethodInfo(c,aClass.getMethodsCount()));
 
         aClass.setAttributesCount(readU2(c));
         // TODO: 2017/9/14 暂时没有属性
