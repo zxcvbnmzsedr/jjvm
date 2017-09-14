@@ -36,12 +36,12 @@ public class Class {
     /**
      * 记录的是字符在常量池中的地址,类名
      */
-    private byte thisClass;
+    private ConstantInfo thisClass;
 
     /**
      * 记录的是字符在常量池中的地址,父类名
      */
-    private byte superClass;
+    private ConstantInfo superClass;
 
     /**
      * 接口数量

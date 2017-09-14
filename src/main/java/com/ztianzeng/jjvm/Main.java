@@ -26,7 +26,16 @@ public class Main {
         aClass.setMinorVersion(readU2(c));
         aClass.setMajorVersion(readU2(c));
         aClass.setConstantPool(readConstantPool(c));
-        aClass.setAccessFlags(readByte(c,2));
+        // 在解析的时候如果是使用16进制的数据，则直接将属性定义为String，然后使用原始的读取数据的方式
+        aClass.setAccessFlags(readByte(c, 2));
+
+        short thisClassIndex = readU2(c);
+        aClass.setThisClass(aClass.getConstantPool()[thisClassIndex]);
+
+        short superClassIndex = readU2(c);
+        aClass.setSuperClass(aClass.getConstantPool()[superClassIndex]);
+
+
         return aClass;
     }
 }
