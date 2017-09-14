@@ -2,7 +2,7 @@ package com.ztianzeng.jjvm;
 
 import com.ztianzeng.jjvm.instructions.load.Aload;
 
-import static com.ztianzeng.jjvm.ByteClassLoader.readU1;
+import static com.ztianzeng.jjvm.ByteClassLoader.readInstruction;
 
 /**
  * @author : 赵天增
@@ -20,8 +20,8 @@ public class Code {
      * 添加操作码
      */
     public Code[] getInstructions(byte[] c) {
-        for (int i = 0;i < this.code.length;i++){
-            byte index = readU1(c);
+        for (int i = 0; i < this.code.length; i++) {
+            short index = readInstruction(c);
             switch (index) {
                 case 0x19:
                     break;

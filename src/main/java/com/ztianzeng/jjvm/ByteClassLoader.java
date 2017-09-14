@@ -17,6 +17,14 @@ public class ByteClassLoader {
     }
 
     /**
+     * 这尼玛不按照常理来，只能重新写一个了
+     * @param c
+     * @return
+     */
+    public static short readInstruction(byte[] c) {
+        return Short.parseShort(readByte(c, 1), 16);
+    }
+    /**
      * 读取两个字节的无符号数
      *
      * @param c 类的字节码
