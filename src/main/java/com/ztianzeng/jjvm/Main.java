@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 
 import static com.ztianzeng.jjvm.ByteClassLoader.*;
 import static com.ztianzeng.jjvm.ConstantPool.*;
+import static com.ztianzeng.jjvm.MethodInfo.newMethodInfo;
 
 /**
  * @author : 赵天增
@@ -35,6 +36,17 @@ public class Main {
         short superClassIndex = readU2(c);
         aClass.setSuperClass(aClass.getConstantPool()[superClassIndex]);
 
+        aClass.setInterfacesCount(readU2(c));
+        // TODO: 2017/9/14 暂时没有接口
+
+        aClass.setFieldsCount(readU2(c));
+        // TODO: 2017/9/14 暂时没有字段
+
+        aClass.setMethodsCount(readU2(c));
+        aClass.setMethod(newMethodInfo(c),aClass.getMethodsCount());
+
+        aClass.setAttributesCount(readU2(c));
+        // TODO: 2017/9/14 暂时没有属性
 
         return aClass;
     }

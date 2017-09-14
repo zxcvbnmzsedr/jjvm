@@ -45,28 +45,28 @@ public class Class {
     /**
      * 接口数量
      */
-    private byte interfacesCount;
+    private short interfacesCount;
 
     // TODO: 2017/9/13 这边缺个接口的实例
 
     /**
      * 字段数量
      */
-    private byte fieldsCount;
+    private short fieldsCount;
 
     // TODO: 2017/9/13 这边缺个字段的实例
 
     /**
      * 方法数量
      */
-    private byte methodsCount;
+    private short methodsCount;
 
-    // TODO: 2017/9/13 这边缺个方法实例
+    private MethodInfo[] method;
 
     /**
      * 属性数量
      */
-    private byte attributesCount;
+    private short attributesCount;
 
     // TODO: 2017/9/13 这边缺个属性实例
 
