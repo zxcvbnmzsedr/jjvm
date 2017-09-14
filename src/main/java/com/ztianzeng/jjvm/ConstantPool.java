@@ -20,7 +20,7 @@ public class ConstantPool {
         short length = readU2(c);
         ConstantInfo[] constantInfos = new ConstantInfo[length];
         // 循环创建常量信息
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < length - 1; i++) {
             constantInfos[i] = readConstantInfo(c);
             if (constantInfos[i] instanceof ConstantInfo.ConstantLongInfo || constantInfos[i] instanceof ConstantInfo.ConstantDoubleInfo)
                 i++;
@@ -30,7 +30,7 @@ public class ConstantPool {
 
     private static ConstantInfo readConstantInfo(byte[] c) {
         byte tag = readU1(c);
-        ConstantInfo info = newConstantInfo(tag,c);
+        ConstantInfo info = newConstantInfo(tag, c);
         return info;
     }
 }

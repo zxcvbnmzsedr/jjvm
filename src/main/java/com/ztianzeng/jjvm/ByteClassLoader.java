@@ -24,12 +24,16 @@ public class ByteClassLoader {
     public static short readU2(byte[] c) {
         return Short.parseShort(readByte(c, 2), 16);
     }
-
-    public static byte readU4(byte[] c) {
-        return Byte.parseByte(readByte(c, 4), 16);
+    /**
+     * 读取四个字节
+     * @param c
+     * @return
+     */
+    public static int readU4(byte[] c) {
+        return Integer.parseInt(readByte(c, 4), 16);
     }
     /**
-     * 用于读取类未见最前面的四个字节
+     * 用于读取类最前面的四个字节
      * @param c
      * @return
      */
@@ -39,9 +43,9 @@ public class ByteClassLoader {
 
 
     /**
-     * 读取四个字节
+     * 读取字节
      */
-    private static String readByte(byte[] c, int n) {
+    public static String readByte(byte[] c, int n) {
         StringBuilder h = new StringBuilder();
         for (int i = 0; i < n; i++) {
             String temp = Integer.toHexString(c[i] & 0xFF);

@@ -26,6 +26,7 @@ public class Main {
         aClass.setMinorVersion(readU2(c));
         aClass.setMajorVersion(readU2(c));
         aClass.setConstantPool(readConstantPool(c));
+        aClass.setAccessFlags(readByte(c,2));
         return aClass;
     }
 }

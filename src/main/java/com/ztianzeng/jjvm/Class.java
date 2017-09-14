@@ -32,7 +32,7 @@ public class Class {
     /**
      * 访问权限
      */
-    private byte accessFlags;
+    private String accessFlags;
     /**
      * 记录的是字符在常量池中的地址,类名
      */

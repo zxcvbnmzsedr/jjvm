@@ -91,7 +91,7 @@ public class ConstantInfo {
     static class ConstantLongInfo extends ConstantInfo {
         long val;
 
-        ConstantLongInfo(byte high, byte low) {
+        ConstantLongInfo(int high, int low) {
             this.val = ((long) high << 32) + low;
         }
     }
@@ -100,7 +100,7 @@ public class ConstantInfo {
         double val;
 
         // TODO: 2017/9/13 还需要计算
-        ConstantDoubleInfo(byte high, byte low) {
+        ConstantDoubleInfo(int high, int low) {
             this.val = (high << 32) + low;
         }
     }
