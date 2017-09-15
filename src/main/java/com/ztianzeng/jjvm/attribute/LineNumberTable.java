@@ -5,8 +5,8 @@ package com.ztianzeng.jjvm.attribute;
  * @create : 2017-09-14 15:00
  * 描述 ：
  */
-public class LineNumberTableAttribute extends AttributeInfo{
-    public LineNumberTableAttribute(short attributeNameIndex, int attributeLength) {
+public class LineNumberTable extends AttributeInfo{
+    public LineNumberTable(short attributeNameIndex, int attributeLength) {
         super(attributeNameIndex, attributeLength);
     }
 }
