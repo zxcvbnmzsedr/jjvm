@@ -1,5 +1,6 @@
 package com.ztianzeng.jjvm;
 
+import com.ztianzeng.jjvm.classfile.Constant;
 import lombok.Data;
 
 
@@ -27,7 +28,7 @@ public class Class {
     /**
      * 常量池实例
      */
-    private ConstantInfo[] constantPool;
+    private Constant[] constantPool;
     /**
      * 访问权限
      */
@@ -35,12 +36,12 @@ public class Class {
     /**
      * 记录的是字符在常量池中的地址,类名
      */
-    private ConstantInfo thisClass;
+    private Constant thisClass;
 
     /**
      * 记录的是字符在常量池中的地址,父类名
      */
-    private ConstantInfo superClass;
+    private Constant superClass;
 
     /**
      * 接口数量

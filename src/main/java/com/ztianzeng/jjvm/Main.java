@@ -4,11 +4,9 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 
 import static com.ztianzeng.jjvm.ByteClassLoader.*;
-import static com.ztianzeng.jjvm.ConstantPool.*;
 import static com.ztianzeng.jjvm.MethodInfo.newMethodInfo;
 
 /**
