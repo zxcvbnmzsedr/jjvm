@@ -80,7 +80,7 @@ public class ClassParser {
         return new JavaClass();
     }
 
-    private final void readAttributes() throws IOException {
+    private void readAttributes() throws IOException {
         int attributeCount = file.readUnsignedShort();
         this.attributes = new Attribute[attributeCount];
         for (int i = 0; i < attributeCount; i++) {
@@ -88,7 +88,7 @@ public class ClassParser {
         }
     }
 
-    private final void readMethods() throws IOException {
+    private void readMethods() throws IOException {
         int methodCount = file.readUnsignedShort();
         this.methods = new Method[methodCount];
         for (int i = 0; i < methodCount; i++) {
@@ -96,7 +96,7 @@ public class ClassParser {
         }
     }
 
-    private final void readFields() throws IOException {
+    private void readFields() throws IOException {
         int fieldCount = file.readUnsignedShort();
         this.fields = new Field[fieldCount];
         for (int i = 0; i < fieldCount; i++) {
@@ -128,15 +128,15 @@ public class ClassParser {
         this.superClassNameIndex = file.readUnsignedShort();
     }
 
-    private final void readConstantPool() {
-        // TODO: 2017/9/15  
+    private void readConstantPool() {
+        // TODO: 2017/9/15
         this.constantPool = new ConstantPool();
     }
 
     /**
      * 读取类的主副版本
      */
-    private final void readVersion() throws IOException {
+    private void readVersion() throws IOException {
         this.minorVersion = file.readUnsignedShort();
         this.majorVersion = file.readUnsignedShort();
     }
@@ -145,7 +145,7 @@ public class ClassParser {
      * 检查开头的魔数
      * 如果不是魔数直接抛出异常
      */
-    private final void readID() throws IOException {
+    private void readID() throws IOException {
         int magix = 0xCAFEBABE;
         if (file.readInt() != magix) {
             throw new ClassFormatException(fileName + " is not a Java .class file");
