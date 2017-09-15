@@ -4,6 +4,8 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import static com.ztianzeng.jjvm.ByteClassLoader.*;
 import static com.ztianzeng.jjvm.ConstantPool.*;
@@ -15,9 +17,20 @@ import static com.ztianzeng.jjvm.MethodInfo.newMethodInfo;
  * 描述 ：
  */
 public class Main {
+
+    public static void main(String[] args){
+
+        if(args.length == 0){
+            System.out.println("usage: JJvm class [args...]");
+            return;
+        }
+        VirtualMachine machine = new VirtualMachine(Paths.get("."),args[0]);
+
+    }
+
     @Test
     public void test() throws Exception {
-        File file = new File("target\\test-classes\\HelloWorld.class");//此时文件已经清空
+        File file = new File("target\\test-classes\\HelloWorld.class");
         decodeByByte(getByte(file));
     }
 
