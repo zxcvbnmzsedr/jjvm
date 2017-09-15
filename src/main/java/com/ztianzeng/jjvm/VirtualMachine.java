@@ -15,7 +15,7 @@ public class VirtualMachine {
     /**
      * 类加载器
      */
-    private ClassLoader classLoader;
+    private JvmClassLoader classLoader;
 
     /**
      * 初始化虚拟机，需要寻找并解析类的信息
@@ -23,7 +23,7 @@ public class VirtualMachine {
      * @param initClass
      */
     public VirtualMachine(Path path,String initClass) {
-
         this.initClass = initClass;
+        classLoader = new JvmClassLoader(path);
     }
 }

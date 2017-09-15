@@ -2,6 +2,8 @@ package com.ztianzeng.jjvm;
 
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 import com.sun.org.apache.bcel.internal.classfile.Method;
+import com.sun.org.apache.bcel.internal.util.ClassLoader;
+import com.sun.org.apache.bcel.internal.util.ClassLoaderRepository;
 
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -23,7 +25,7 @@ public class JvmOpcodeClass implements JvmClass {
     }
 
     public static JvmClass read(Path path) {
-        return null;
+        return new JvmOpcodeClass();
     }
 
     public JvmOpcodeClass(JavaClass classFile) {
@@ -34,4 +36,5 @@ public class JvmOpcodeClass implements JvmClass {
             methods.put(name+":"+desc, new JvmOpcodeMethod(classFile, method));
         }
     }
+
 }

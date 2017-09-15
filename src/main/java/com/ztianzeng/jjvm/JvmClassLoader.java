@@ -11,14 +11,14 @@ import java.nio.file.Paths;
  * @create : 2017-09-15 9:46
  * 描述 ：类加载器
  */
-public class ClassLoader {
+public class JvmClassLoader {
 
     /**
      * 类搜索路径
      */
     private Path path;
 
-    public ClassLoader(Path path) {
+    public JvmClassLoader(Path path) {
         this.path = path;
     }
 
