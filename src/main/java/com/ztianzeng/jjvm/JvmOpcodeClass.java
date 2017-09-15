@@ -2,8 +2,6 @@ package com.ztianzeng.jjvm;
 
 import com.sun.org.apache.bcel.internal.classfile.JavaClass;
 import com.sun.org.apache.bcel.internal.classfile.Method;
-import com.sun.org.apache.bcel.internal.util.ClassLoader;
-import com.sun.org.apache.bcel.internal.util.ClassLoaderRepository;
 
 import java.nio.file.Path;
 import java.util.HashMap;
@@ -14,7 +12,6 @@ import java.util.HashMap;
  * 描述 ：
  */
 public class JvmOpcodeClass implements JvmClass {
-
 
     private JavaClass classFile;
 
