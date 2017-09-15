@@ -22,7 +22,7 @@ public class JvmOpcodeClass implements JvmClass {
     }
 
     public static JvmClass read(Path path) {
-        return new JvmOpcodeClass();
+        return null;
     }
 
     public JvmOpcodeClass(JavaClass classFile) {

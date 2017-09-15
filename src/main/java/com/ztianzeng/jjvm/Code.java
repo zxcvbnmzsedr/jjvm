@@ -1,9 +1,5 @@
 package com.ztianzeng.jjvm;
 
-import com.ztianzeng.jjvm.instructions.load.Aload;
-
-import static com.ztianzeng.jjvm.ByteClassLoader.readInstruction;
-
 /**
  * @author : 赵天增
  * @create : 2017-09-14 14:54
@@ -23,23 +19,23 @@ public class Code {
      * 添加操作码
      */
     public Code[] getInstructions(byte[] c) {
-        for (int i = 0; i < this.code.length; i++) {
-            short index = readInstruction(c);
-            switch (index) {
-                case aload_0:
-                    code[i] = new Aload(0);
-                    break;
-
-                case _return:
-
-                    break;
-
-                case invokespecial:
-
-                    break;
-
-            }
-        }
+//        for (int i = 0; i < this.code.length; i++) {
+//            short index = readInstruction(c);
+//            switch (index) {
+//                case aload_0:
+//                    code[i] = new Aload(0);
+//                    break;
+//
+//                case _return:
+//
+//                    break;
+//
+//                case invokespecial:
+//
+//                    break;
+//
+//            }
+//        }
         return code;
     }
 }

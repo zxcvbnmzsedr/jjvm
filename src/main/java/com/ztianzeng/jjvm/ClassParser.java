@@ -126,8 +126,8 @@ public class ClassParser {
         this.superClassNameIndex = file.readUnsignedShort();
     }
 
-    private void readConstantPool() {
-        this.constantPool = new ConstantPool();
+    private void readConstantPool() throws IOException {
+        this.constantPool = new ConstantPool(file);
     }
 
     /**
