@@ -27,7 +27,7 @@ public class Main {
     @Test
     public void test() throws Exception {
         File file = new File("target\\test-classes\\HelloWorld.class");
-        JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),null).parse();
+        JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),"HelloWorld").parse();
         System.out.println(jca);
 //        decodeByByte(getByte(file));
     }

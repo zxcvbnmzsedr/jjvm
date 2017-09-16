@@ -25,7 +25,7 @@ public class ConstantPool {
         byte tag;
         this.constantPoolCount = file.readUnsignedShort();
         constantPool = new Constant[this.constantPoolCount];
-        for (int i = 0; i < this.constantPoolCount; i++) {
+        for (int i = 0; i < this.constantPoolCount - 1; i++) {
             this.constantPool[i] = Constant.readConstant(file);
             tag = constantPool[i].getTag();
             if ((tag == Constants.CONSTANT_Double) || (tag == Constants.CONSTANT_Long))
@@ -54,11 +54,11 @@ public class ConstantPool {
         }
         return constantPool[index];
     }
+
     public String getConstantString(int index, byte tag)
-            throws ClassFormatException
-    {
+            throws ClassFormatException {
         Constant c;
-        int    i;
+        int i;
 
         c = getConstant(index, tag);
 
@@ -69,15 +69,19 @@ public class ConstantPool {
      * we could have solved these more elegantly by using the same
      * variable name or by subclassing.
      */
-        switch(tag) {
-            case Constants.CONSTANT_Class:  i = ((ConstantClass)c).getNameIndex();    break;
-            case Constants.CONSTANT_String: i = ((ConstantString)c).getStringIndex(); break;
+        switch (tag) {
+            case Constants.CONSTANT_Class:
+                i = ((ConstantClass) c).getNameIndex();
+                break;
+            case Constants.CONSTANT_String:
+                i = ((ConstantString) c).getStringIndex();
+                break;
             default:
                 throw new RuntimeException("getConstantString called with illegal tag " + tag);
         }
 
         // Finally get the string from the constant pool
         c = getConstant(i, Constants.CONSTANT_Utf8);
-        return ((ConstantUtf8)c).getBytes();
+        return ((ConstantUtf8) c).getBytes();
     }
 }

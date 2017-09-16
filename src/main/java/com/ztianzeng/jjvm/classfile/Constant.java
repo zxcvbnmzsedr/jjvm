@@ -1,5 +1,6 @@
 package com.ztianzeng.jjvm.classfile;
 
+import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
 import com.ztianzeng.jjvm.Constants;
 
 import java.io.DataInputStream;
@@ -53,7 +54,7 @@ public abstract class Constant {
             case Constants.CONSTANT_Utf8:
                 return new ConstantUtf8(file);
             default:
-                return null;
+                throw new ClassFormatException("Invalid byte tag in constant pool: " + tag);
         }
     }
 
