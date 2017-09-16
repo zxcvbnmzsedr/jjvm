@@ -18,13 +18,12 @@ import java.nio.file.Paths;
 public class Main {
 
     public static void main(String[] args){
-
         if(args.length == 0){
             System.out.println("usage: JJvm class [args...]");
             return;
         }
         VirtualMachine machine = new VirtualMachine(Paths.get("."),args[0]);
-
+        
     }
 
     @Test
@@ -32,10 +31,5 @@ public class Main {
         File file = new File("target\\test-classes\\HelloWorld.class");
         JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),"HelloWorld").parse();
         System.out.println(jca);
-//        decodeByByte(getByte(file));
     }
-//
-//    public static Class decodeByByte(byte[] c) throws UnsupportedEncodingException {
-//
-//    }
 }

@@ -1,6 +1,5 @@
 package com.ztianzeng.jjvm.jvm;
 
-import com.ztianzeng.jjvm.JvmClassLoader;
 
 import java.nio.file.Path;
 
@@ -27,5 +26,14 @@ public class VirtualMachine {
     public VirtualMachine(Path path,String initClass) {
         this.initClass = initClass;
         classLoader = new JvmClassLoader(path);
+    }
+
+    public void run(){
+        /**
+         * 创建虚拟机环境
+         */
+        Env env = new Env(this);
+
+
     }
 }
