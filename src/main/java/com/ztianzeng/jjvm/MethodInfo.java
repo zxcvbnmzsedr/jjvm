@@ -1,6 +1,5 @@
 package com.ztianzeng.jjvm;
 
-import com.ztianzeng.jjvm.attribute.AttributeInfo;
 
 /**
  * @author : 赵天增

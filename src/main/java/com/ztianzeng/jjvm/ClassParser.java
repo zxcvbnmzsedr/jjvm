@@ -3,6 +3,7 @@ package com.ztianzeng.jjvm;
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
 import com.ztianzeng.jjvm.attribute.Attribute;
 import com.ztianzeng.jjvm.classfile.ConstantPool;
+import com.ztianzeng.jjvm.classfile.Method;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
@@ -94,7 +95,7 @@ public class ClassParser {
         int methodCount = file.readUnsignedShort();
         this.methods = new Method[methodCount];
         for (int i = 0; i < methodCount; i++) {
-            this.methods[i] = new Method();
+            this.methods[i] = new Method(file,constantPool);
         }
     }
 
