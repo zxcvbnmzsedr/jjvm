@@ -25,7 +25,8 @@ public class ConstantPool {
         byte tag;
         this.constantPoolCount = file.readUnsignedShort();
         constantPool = new Constant[this.constantPoolCount];
-        for (int i = 0; i < this.constantPoolCount - 1; i++) {
+        // 从1开始，0标识啥也不是来着
+        for (int i = 1; i < this.constantPoolCount; i++) {
             this.constantPool[i] = Constant.readConstant(file);
             tag = constantPool[i].getTag();
             if ((tag == Constants.CONSTANT_Double) || (tag == Constants.CONSTANT_Long))
