@@ -1,7 +1,5 @@
 package com.ztianzeng.jjvm.classfile;
 
-import sun.security.pkcs11.wrapper.Constants;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 
@@ -18,7 +16,7 @@ public class ConstantInteger extends Constant {
         this(file.readInt());
     }
     ConstantInteger(int bytes) {
-        super(com.ztianzeng.jjvm.Constants.CONSTANT_Integer);
+        super(com.ztianzeng.jjvm.classfile.Constants.CONSTANT_Integer);
         this.bytes = bytes;
     }
 

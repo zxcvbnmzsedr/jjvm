@@ -1,5 +1,8 @@
 package com.ztianzeng.jjvm;
 
+import com.ztianzeng.jjvm.classfile.ClassParser;
+import com.ztianzeng.jjvm.classfile.JavaClass;
+import com.ztianzeng.jjvm.jvm.VirtualMachine;
 import org.junit.Test;
 
 import java.io.DataInputStream;

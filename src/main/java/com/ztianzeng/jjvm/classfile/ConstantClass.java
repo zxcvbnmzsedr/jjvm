@@ -2,8 +2,6 @@ package com.ztianzeng.jjvm.classfile;
 
 
 
-import com.ztianzeng.jjvm.Constants;
-
 import java.io.DataInputStream;
 import java.io.IOException;
 

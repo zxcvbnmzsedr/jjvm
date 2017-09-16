@@ -1,8 +1,6 @@
 package com.ztianzeng.jjvm.classfile;
 
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
-import com.ztianzeng.jjvm.Constants;
-import com.ztianzeng.jjvm.classfile.Constant;
 
 import java.io.DataInputStream;
 import java.io.IOException;

@@ -2,7 +2,7 @@
  * Copyright (c) 2007, 2017, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.classfile;
 
 /* ====================================================================
  * The Apache Software License, Version 1.1
@@ -63,12 +63,8 @@ import com.sun.org.apache.bcel.internal.classfile.Utility;
 import com.sun.org.apache.bcel.internal.generic.Type;
 import com.ztianzeng.jjvm.attribute.Attribute;
 import com.ztianzeng.jjvm.attribute.SourceFile;
-import com.ztianzeng.jjvm.classfile.AccessFlags;
-import com.ztianzeng.jjvm.classfile.ConstantPool;
-import com.ztianzeng.jjvm.classfile.Field;
-import com.ztianzeng.jjvm.classfile.Method;
+import com.ztianzeng.jjvm.classfile.*;
 
-import java.io.*;
 import java.util.StringTokenizer;
 
 /**

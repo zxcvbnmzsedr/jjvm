@@ -1,4 +1,4 @@
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.jvm;
 
 /**
  * @author : 赵天增

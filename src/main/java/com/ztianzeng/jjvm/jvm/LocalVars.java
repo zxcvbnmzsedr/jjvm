@@ -1,4 +1,6 @@
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.jvm;
+
+import com.ztianzeng.jjvm.jvm.Slot;
 
 /**
  * 局部变量表

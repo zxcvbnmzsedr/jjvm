@@ -1,4 +1,6 @@
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.jvm;
+
+import com.ztianzeng.jjvm.JvmClassLoader;
 
 import java.nio.file.Path;
 

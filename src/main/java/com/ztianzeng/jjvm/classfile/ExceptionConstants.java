@@ -2,7 +2,7 @@
  * Copyright (c) 2007, 2017, Oracle and/or its affiliates. All rights reserved.
  * ORACLE PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
  */
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.classfile;
 
 /* ====================================================================
  * The Apache Software License, Version 1.1

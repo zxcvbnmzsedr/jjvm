@@ -1,7 +1,5 @@
 package com.ztianzeng.jjvm.classfile;
 
-import com.ztianzeng.jjvm.Constants;
-
 /**
  * @author : 赵天增
  * @create : 2017-09-15 16:18

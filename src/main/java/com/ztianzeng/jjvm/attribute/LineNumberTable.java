@@ -1,6 +1,6 @@
 package com.ztianzeng.jjvm.attribute;
 
-import com.ztianzeng.jjvm.Constants;
+import com.ztianzeng.jjvm.classfile.Constants;
 import com.ztianzeng.jjvm.classfile.ConstantPool;
 
 import java.io.DataInputStream;

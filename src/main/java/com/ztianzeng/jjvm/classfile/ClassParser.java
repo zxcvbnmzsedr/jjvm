@@ -1,10 +1,7 @@
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.classfile;
 
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
 import com.ztianzeng.jjvm.attribute.Attribute;
-import com.ztianzeng.jjvm.classfile.ConstantPool;
-import com.ztianzeng.jjvm.classfile.Field;
-import com.ztianzeng.jjvm.classfile.Method;
 
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;

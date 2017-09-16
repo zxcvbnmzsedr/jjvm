@@ -1,4 +1,4 @@
-package com.ztianzeng.jjvm;
+package com.ztianzeng.jjvm.jvm;
 
 /**
  * 栈帧中的局部变量表的容量以变量槽Slot为最小单位
