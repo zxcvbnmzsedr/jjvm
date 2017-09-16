@@ -1,6 +1,7 @@
 package com.ztianzeng.jjvm.classfile;
 
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
+import com.ztianzeng.jjvm.Constants;
 import com.ztianzeng.jjvm.attribute.Attribute;
 
 import java.io.DataInputStream;
@@ -41,5 +42,17 @@ public abstract class FieldOrMethod extends AccessFlags {
     public final void setAttributes(Attribute[] attributes) {
         this.attributes = attributes;
         attributes_count = (attributes == null) ? 0 : attributes.length;
+    }
+    public final String getName() {
+        ConstantUtf8  c;
+        c = (ConstantUtf8)constant_pool.getConstant(name_index,
+                Constants.CONSTANT_Utf8);
+        return c.getBytes();
+    }
+    public final String getSignature() {
+        ConstantUtf8  c;
+        c = (ConstantUtf8)constant_pool.getConstant(signature_index,
+                Constants.CONSTANT_Utf8);
+        return c.getBytes();
     }
 }

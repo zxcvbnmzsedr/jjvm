@@ -54,5 +54,30 @@ public class ConstantPool {
         }
         return constantPool[index];
     }
+    public String getConstantString(int index, byte tag)
+            throws ClassFormatException
+    {
+        Constant c;
+        int    i;
 
+        c = getConstant(index, tag);
+
+    /* This switch() is not that elegant, since the two classes have the
+     * same contents, they just differ in the name of the index
+     * field variable.
+     * But we want to stick to the JVM naming conventions closely though
+     * we could have solved these more elegantly by using the same
+     * variable name or by subclassing.
+     */
+        switch(tag) {
+            case Constants.CONSTANT_Class:  i = ((ConstantClass)c).getNameIndex();    break;
+            case Constants.CONSTANT_String: i = ((ConstantString)c).getStringIndex(); break;
+            default:
+                throw new RuntimeException("getConstantString called with illegal tag " + tag);
+        }
+
+        // Finally get the string from the constant pool
+        c = getConstant(i, Constants.CONSTANT_Utf8);
+        return ((ConstantUtf8)c).getBytes();
+    }
 }

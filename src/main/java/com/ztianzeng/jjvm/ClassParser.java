@@ -59,7 +59,7 @@ public class ClassParser {
 
     }
 
-    public JavaClass parse() throws IOException, ClassFormatException {
+    public JavaClass parse() throws IOException {
         readID();
 
         readVersion();
@@ -81,7 +81,10 @@ public class ClassParser {
         if (zip != null)
             zip.close();
 
-        return new JavaClass();
+        return new JavaClass(classNameIndex, superClassNameIndex,
+                fileName, majorVersion, minorVersion, accessFlg,
+                constantPool, interfaces, fields,
+                methods, attributes, isZip? JavaClass.ZIP : JavaClass.FILE);
     }
 
     private void readAttributes() throws IOException {
@@ -96,7 +99,7 @@ public class ClassParser {
         int methodCount = file.readUnsignedShort();
         this.methods = new Method[methodCount];
         for (int i = 0; i < methodCount; i++) {
-            this.methods[i] = new Method(file,constantPool);
+            this.methods[i] = new Method(file, constantPool);
         }
     }
 

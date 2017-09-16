@@ -2,7 +2,9 @@ package com.ztianzeng.jjvm;
 
 import org.junit.Test;
 
+import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.nio.file.Paths;
 
 /**
@@ -25,6 +27,8 @@ public class Main {
     @Test
     public void test() throws Exception {
         File file = new File("target\\test-classes\\HelloWorld.class");
+        JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),null).parse();
+        System.out.println(jca);
 //        decodeByByte(getByte(file));
     }
 //

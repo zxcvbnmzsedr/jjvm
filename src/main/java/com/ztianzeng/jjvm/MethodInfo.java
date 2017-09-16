@@ -1,6 +1,8 @@
 package com.ztianzeng.jjvm;
 
 
+import com.ztianzeng.jjvm.attribute.Attribute;
+
 /**
  * @author : 赵天增
  * @create : 2017-09-14 14:11
@@ -28,14 +30,14 @@ public class MethodInfo {
     /**
      * 附加属性，在attribute包中
      */
-    AttributeInfo attributes[];
+    Attribute attributes[];
 
     MethodInfo(short accessFlags, short nameIndex, short descriptorIndex, short attributesCount) {
         this.accessFlags = accessFlags;
         this.nameIndex = nameIndex;
         this.descriptorIndex = descriptorIndex;
         this.attributesCount = attributesCount;
-        this.attributes = new AttributeInfo[attributesCount];
+        this.attributes = new Attribute[attributesCount];
     }
 
 

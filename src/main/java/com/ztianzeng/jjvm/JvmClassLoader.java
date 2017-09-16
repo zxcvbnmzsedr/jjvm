@@ -1,7 +1,5 @@
 package com.ztianzeng.jjvm;
 
-import com.sun.org.apache.bcel.internal.classfile.AccessFlags;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -26,10 +24,11 @@ public class JvmClassLoader {
         String fileName = path + "/" + className.replace(".","/")+".class";
         Path path = Paths.get(fileName);
         // 如果文件存在加载文件的字节码
-        if (Files.exists(path)){
-            return JvmOpcodeClass.read(path);
-        }else {
-            return null;
-        }
+//        if (Files.exists(path)){
+//            return JvmOpcodeClass.read(path);
+//        }else {
+//            return null;
+//        }
+        return null;
     }
 }

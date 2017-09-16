@@ -28,4 +28,5 @@ public class ConstantClass extends Constant implements ConstantObject{
         Constant c = cp.getConstant(nameIndex, Constants.CONSTANT_Utf8);
         return ((ConstantUtf8)c).getBytes();
     }
+    public final int getNameIndex() { return nameIndex; }
 }
