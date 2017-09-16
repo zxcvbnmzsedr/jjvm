@@ -1,6 +1,7 @@
 package com.ztianzeng.jjvm;
 
-import com.sun.org.apache.bcel.internal.classfile.*;
+import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
+import com.ztianzeng.jjvm.attribute.Attribute;
 import com.ztianzeng.jjvm.classfile.ConstantPool;
 
 import java.io.BufferedInputStream;
@@ -85,7 +86,7 @@ public class ClassParser {
         int attributeCount = file.readUnsignedShort();
         this.attributes = new Attribute[attributeCount];
         for (int i = 0; i < attributeCount; i++) {
-            attributes[i] = Attribute.readAttribute();
+            attributes[i] = Attribute.readAttribute(file, constantPool);
         }
     }
 
