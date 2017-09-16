@@ -1,7 +1,6 @@
 package com.ztianzeng.jjvm.attribute;
 
-import com.sun.org.apache.bcel.internal.Constants;
-import com.sun.org.apache.bcel.internal.classfile.CodeException;
+import com.ztianzeng.jjvm.Constants;
 import com.ztianzeng.jjvm.classfile.ConstantPool;
 
 import java.io.DataInputStream;
