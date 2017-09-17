@@ -25,7 +25,6 @@ public class StackFrame {
         this.constantPool = constantPool;
         this.operandStack = new SlotsStack(stackSize);
         this.localVariables = new Slots(variables);
-
     }
     /**
      * 动态链接

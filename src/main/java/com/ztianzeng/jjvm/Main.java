@@ -21,24 +21,30 @@ import java.nio.file.Paths;
  */
 public class Main {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 //        if(args.length == 0){
 //            System.out.println("usage: JJvm class [args...]");
 //            return;
 //        }
 //        Path path = new ZipPath("");
-        VirtualMachine machine = new VirtualMachine(Paths.get("."),args[0]);
 //        VirtualMachine machine = new VirtualMachine(Paths.get("."),args[0]);
-        machine.run();
-        
-    }
+//        VirtualMachine machine = new VirtualMachine(Paths.get("."),args[0]);
+//        machine.run();
 
-    @Test
-    public void test() throws Exception {
         File file = new File("target\\test-classes\\HelloWorld.class");
         JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),"HelloWorld").parse();
         VirtualMachine machine = new VirtualMachine(Paths.get("."),null);
         Env enb = new Env(machine);
-        jca.getMethodByName("main").call(enb,null,null);
+        jca.getMethodByName("main").call(enb,jca,args);
+        
     }
+
+//    @Test
+//    public void test() throws Exception {
+//        File file = new File("target\\test-classes\\HelloWorld.class");
+//        JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),"HelloWorld").parse();
+//        VirtualMachine machine = new VirtualMachine(Paths.get("."),null);
+//        Env enb = new Env(machine);
+//        jca.getMethodByName("main").call(enb,jca,null);
+//    }
 }

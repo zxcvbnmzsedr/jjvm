@@ -48,7 +48,9 @@ public class Code extends Attribute {
 
         codeLength = file.readInt();
         code = new byte[codeLength];
-        file.readFully(code);
+        for (int i =0;i<codeLength;i++){
+            code[i] = file.readByte();
+        }
         exceptionTableLength = file.readUnsignedShort();
         exception_table = new CodeException[exceptionTableLength];
 
