@@ -3,6 +3,7 @@ package com.ztianzeng.jjvm;
 import com.sun.nio.zipfs.ZipPath;
 import com.ztianzeng.jjvm.classfile.ClassParser;
 import com.ztianzeng.jjvm.classfile.JavaClass;
+import com.ztianzeng.jjvm.jvm.Env;
 import com.ztianzeng.jjvm.jvm.VirtualMachine;
 import org.junit.Test;
 
@@ -36,7 +37,8 @@ public class Main {
     public void test() throws Exception {
         File file = new File("target\\test-classes\\HelloWorld.class");
         JavaClass jca = new ClassParser(new DataInputStream(new FileInputStream(file)),"HelloWorld").parse();
-//        System.out.println();
-        jca.getMethodByName("main").call()
+        VirtualMachine machine = new VirtualMachine(Paths.get("."),null);
+        Env enb = new Env(machine);
+        jca.getMethodByName("main").call(enb,null,null);
     }
 }

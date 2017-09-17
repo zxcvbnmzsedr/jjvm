@@ -54,4 +54,5 @@ public abstract class FieldOrMethod extends AccessFlags {
                 Constants.CONSTANT_Utf8);
         return c.getBytes();
     }
+    public final Attribute[] getAttributes() { return attributes; }
 }

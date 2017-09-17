@@ -15,15 +15,12 @@ public class Stack {
     /**
      * 栈帧
      */
-    private java.util.Stack<StackFrame> stackFrames;
+    private java.util.Stack<StackFrame> stackFrames = new java.util.Stack<>();
 
-    public Stack(int maxSize) {
-        this.maxSize = maxSize;
-    }
 
     public StackFrame newFrame(ConstantPool constantPool,int variables,int stackSize) {
-        StackFrame frame = new StackFrame(constantPool);
-        push(frame);
+        StackFrame frame = new StackFrame(constantPool,variables,stackSize);
+        stackFrames.push(frame);
         return frame;
     }
 

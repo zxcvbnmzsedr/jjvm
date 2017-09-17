@@ -111,4 +111,12 @@ public class Code extends Attribute {
                 + 8 * exceptionTableLength /* exception table */
                 + 2 /* attributes count */;
     }
+
+    public int getMaxStack() {
+        return maxStack;
+    }
+
+    public int getMaxLocals() {
+        return maxLocals;
+    }
 }

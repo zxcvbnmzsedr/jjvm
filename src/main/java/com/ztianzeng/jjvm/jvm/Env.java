@@ -9,7 +9,7 @@ public class Env {
     /**
      * 虚拟机栈
      */
-    private Stack stack = new Stack(1024);
+    private Stack stack = new Stack();
 
     /**
      * 当前虚拟机
