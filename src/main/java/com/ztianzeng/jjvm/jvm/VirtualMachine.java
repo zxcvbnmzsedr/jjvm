@@ -1,6 +1,9 @@
 package com.ztianzeng.jjvm.jvm;
 
 
+import com.ztianzeng.jjvm.classfile.JavaClass;
+
+import java.io.IOException;
 import java.nio.file.Path;
 
 /**
@@ -20,20 +23,25 @@ public class VirtualMachine {
 
     /**
      * 初始化虚拟机，需要寻找并解析类的信息
+     *
      * @param path
      * @param initClass
      */
-    public VirtualMachine(Path path,String initClass) {
+    public VirtualMachine(Path path, String initClass) {
         this.initClass = initClass;
         classLoader = new JvmClassLoader(path);
     }
 
-    public void run(){
+    public void run() throws IOException {
         /**
          * 创建虚拟机环境
          */
         Env env = new Env(this);
+        /**
+         * 获取JavaClass
+         */
+        JavaClass javaClass = classLoader.loadClass(initClass);
 
-
+        System.out.println(javaClass.getMethods());
     }
 }

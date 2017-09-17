@@ -1,5 +1,7 @@
 package com.ztianzeng.jjvm.jvm;
 
+import com.ztianzeng.jjvm.classfile.ConstantPool;
+
 /**
  * @author : 赵天增
  * @create : 2017-09-13 10:48
@@ -17,6 +19,12 @@ public class Stack {
 
     public Stack(int maxSize) {
         this.maxSize = maxSize;
+    }
+
+    public StackFrame newFrame(ConstantPool constantPool,int variables,int stackSize) {
+        StackFrame frame = new StackFrame(constantPool);
+        push(frame);
+        return frame;
     }
 
     public void push(StackFrame stackFrame) {

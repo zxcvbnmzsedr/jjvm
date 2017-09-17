@@ -2,6 +2,8 @@ package com.ztianzeng.jjvm.classfile;
 
 import com.sun.org.apache.bcel.internal.classfile.ClassFormatException;
 import com.ztianzeng.jjvm.attribute.Attribute;
+import com.ztianzeng.jjvm.jvm.Env;
+import com.ztianzeng.jjvm.jvm.StackFrame;
 
 import java.io.DataInputStream;
 import java.io.IOException;
@@ -21,5 +23,17 @@ public class Method extends FieldOrMethod{
                   Attribute[] attributes, ConstantPool constant_pool)
     {
         super(access_flags, name_index, signature_index, attributes, constant_pool);
+    }
+
+    /**
+     * 执行方法
+     * @param env 虚拟机
+     * @param thiz
+     * @param args
+     * @throws Exception
+     */
+    public void call(Env env, Object thiz, Object ...args) throws Exception {
+//        每次方法调用都会产生一个栈帧,执行的时候创建一个栈帧并将栈帧推入栈中，置于栈顶
+        StackFrame frame = env.getStack().newFrame(constant_pool);
     }
 }
