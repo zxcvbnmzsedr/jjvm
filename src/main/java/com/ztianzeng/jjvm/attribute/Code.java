@@ -121,4 +121,8 @@ public class Code extends Attribute {
     public int getMaxLocals() {
         return maxLocals;
     }
+
+    public byte[] getCode() {
+        return code;
+    }
 }

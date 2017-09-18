@@ -47,10 +47,8 @@ public abstract class Attribute {
         name_index = (int) file.readUnsignedShort();
         c = (ConstantUtf8) constant_pool.getConstant(name_index, Constants.CONSTANT_Utf8);
         name = c.getBytes();
-
         // Length of data in bytes
         length = file.readInt();
-
         // Compare strings to find known attribute
         for (byte i = 0; i < Constants.KNOWN_ATTRIBUTES; i++) {
             if (name.equals(Constants.ATTRIBUTE_NAMES[i])) {
