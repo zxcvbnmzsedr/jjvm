@@ -56,20 +56,20 @@ public class Method extends FieldOrMethod {
         // 设置完局部变量表之后执行字节码
         // 弹出最上面的栈帧
         StackFrame stackFrame = env.getStack().pop();
-//        获取局部变量表
+        // 获取局部变量表
         Slots<Object> s = stackFrame.getLocalVariables();
-//        获取自己
+        // 获取自己
         JavaClass claz = (JavaClass) s.get(0);
         // 遍历方法
-        for (Method method:claz.getMethods()){
+        for (Method method : claz.getMethods()) {
             // 遍历属性
-            for (Attribute attribute:method.getAttributes()){
-                if (attribute instanceof Code){
-//                    取出操作码
-                    byte[] code = ((Code)attribute).getCode();
-                    for(byte c:code){
-                        switch (c){
-//                            执行对应的操作码
+            for (Attribute attribute : method.getAttributes()) {
+                if (attribute instanceof Code) {
+                    // 取出操作码
+                    byte[] code = ((Code) attribute).getCode();
+                    for (byte c : code) {
+                        switch (c) {
+                            // 执行对应的操作码
                             case 0x00:
                                 break;
                         }
