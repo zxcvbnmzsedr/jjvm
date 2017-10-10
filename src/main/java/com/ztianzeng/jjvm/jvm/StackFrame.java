@@ -41,4 +41,12 @@ public class StackFrame {
     public Slots<Object> getLocalVariables() {
         return localVariables;
     }
+
+    public ConstantPool getConstantPool() {
+        return constantPool;
+    }
+
+    public SlotsStack<Object> getOperandStack() {
+        return operandStack;
+    }
 }

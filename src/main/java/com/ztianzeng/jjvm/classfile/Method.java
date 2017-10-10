@@ -68,9 +68,26 @@ public class Method extends FieldOrMethod {
                     // 取出操作码
                     byte[] code = ((Code) attribute).getCode();
                     for (byte c : code) {
-                        switch (c) {
+                        int co = 0xff & c;
+                        switch (co) {
                             // 执行对应的操作码
-                            case 0x00:
+                            case Constants.ALOAD_0:
+                                stackFrame.getOperandStack().push(stackFrame.getLocalVariables().get(0), 1);
+                                break;
+                            //invokespecial: 调用超类构造方法，实例初始化方法，私有方法。
+                            case Constants.INVOKESPECIAL:
+
+                                break;
+                            case Constants.RETURN:
+
+                                break;
+
+                            //getstatic: 获取对象的静态字段值
+                            case Constants.GETSTATIC:
+
+                                break;
+                            case Constants.INVOKEVIRTUAL:
+
                                 break;
                         }
                     }
